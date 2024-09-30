@@ -1,0 +1,56 @@
+@PostMapping("/addEmployee")
+    public Employee101 addEmployee(@RequestBody Employee101 employee) {
+        return service.saveEmployee(employee);}
+    Format:
+    {
+        "firstName": "Zeus
+        "lastName": "Aeternus",
+        "bdate": "100-01-01"
+    }
+
+
+@PostMapping("/addEmployees")
+    public List<Employee101> addEmployees(@RequestBody List<Employee101> employees) {
+        return service.saveEmployees(employees);}
+    Format:
+    [
+        {
+            "firstName": "Poseidon",
+            "lastName": "Asterios",
+            "bdate": "200-02-02"
+        },
+        {
+            "firstName": "Oceanus",
+            "lastName": "Tethys",
+            "bdate": "1000-12-20"
+        }
+    ]
+
+@GetMapping("/Employees")
+    public List<Employee101> findAllEmployees() {
+        return service.getEmployees();}
+
+@GetMapping("/EmployeeByEmpId/{id}")
+    public Employee101 findEmployeeByEmpId(@PathVariable int empId) {
+        return service.getEmployeeById(empId);}
+
+@GetMapping("/Employee/{firstName}")
+    public Employee101 findEmployeeByFirstName(@PathVariable String firstName) {
+        return
+            service.getEmployeeByFirstName(firstName);}
+
+@PutMapping("/update")
+    public Employee101 updateEmployee(@RequestBody Employee101 employee) {
+        return service.updateEmployee(employee);}
+    Format:
+    {
+        "empId"; 1,
+        "firstName": "Perseus",
+        "lastName": "Danae",
+        "bdate": "2000-02-13"
+    }
+
+
+@DeleteMapping("/delete/{empId}")
+    public String deleteEmployee(@PathVariable int empId) {
+        return service.deleteEmployee(empId);}
