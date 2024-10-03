@@ -3,11 +3,10 @@
         return service.saveEmployee(employee);}
     Format:
     {
-        "firstName": "Zeus
+        "firstName": "Zeus",
         "lastName": "Aeternus",
         "bdate": "100-01-01"
     }
-
 
 @PostMapping("/addEmployees")
     public List<Employee101> addEmployees(@RequestBody List<Employee101> employees) {
@@ -49,7 +48,6 @@
         "lastName": "Danae",
         "bdate": "2000-02-13"
     }
-
 
 @DeleteMapping("/delete/{empId}")
     public String deleteEmployee(@PathVariable int empId) {
